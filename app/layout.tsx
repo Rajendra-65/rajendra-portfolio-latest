@@ -21,10 +21,10 @@ export default function RootLayout({
           defaultTheme="dark"
         >
           <Navbar/>
-          <BottomBar/>
-          <div className="px-5 py-5 ml-[20px] mr-[20px]">
+          <div className="px-5 py-5 ml-[20px] mr-[20px] mt-[68px] mb-[68px] overflow-y-auto md:overflow-y-hidden">
             {children}
           </div>
+          <BottomBar/>
         </ThemeProvider>
       </body>
     </html>
