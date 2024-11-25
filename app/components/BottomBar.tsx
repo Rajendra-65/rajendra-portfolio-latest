@@ -2,7 +2,7 @@ import React from 'react'
 
 const BottomBar = () => {
     return (
-        <div className='bottom-0 px-5 py-5 h-[68px] w-[100%] border bg-gray-950 z-10'>
+        <div className='bottom-0 px-5 py-5 h-[68px] w-[100%] border bg-gray-950 z-10 fixed'>
             <div className = "flex justify-between">
                 <div className=''>
                     <h1 className='text-xl'>2024 @copy alright reserved</h1>
