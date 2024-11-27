@@ -42,16 +42,16 @@ const skillSet = [
         project_Link: ""
     },
     {
-        skillName:"MongoDb",
-        icon:SiMongodb,
-        className: "text-white w-[57px] h-[50px] rounded-sm",
-        project_Link: ""
-    },
-    {
         skillName: "Kafka",
         icon: SiApachekafka,
         className: "text-cyan-500 w-[57px] h-[50px] rounded-sm",
         project_Link: "/kafka"
+    },
+    {
+        skillName:"MongoDb",
+        icon:SiMongodb,
+        className: "text-white w-[57px] h-[50px] rounded-sm",
+        project_Link: "/mongo"
     },
     {
         skillName: "Spark",
@@ -109,7 +109,7 @@ const De = () => {
                 {
                     skillSet.map((skill, index) => (
                         <div 
-                            className='flex justify-center flex-col items-center w-[100px] h-[125px] border space-y-3 mt-[2px]'
+                            className='flex justify-center flex-col items-center w-[100px] h-[125px] border space-y-3 mt-[2px] gap-[6px]'
                         >
                             <skill.icon 
                                 className={skill.className} 

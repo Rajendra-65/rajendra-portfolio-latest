@@ -14,7 +14,7 @@ const ProjectCard = (project_details:typeof receivedProjectDetails) => {
     return (
         <div>
             <div 
-                className="w-[92%] h-[355px] flex flex-col md:flex-row space-x-2 border border-b-4 border-r-4 border-r-white border-b-white p-3 rounded-md mb-2"
+                className="w-[92%] h-auto flex flex-col md:flex-row space-x-2 border border-b-4 border-r-4 border-r-white border-b-white p-3 rounded-md mb-2"
             >
                 <div 
                     className="w-[89%] md:w-[72%] h-full"
@@ -35,7 +35,7 @@ const ProjectCard = (project_details:typeof receivedProjectDetails) => {
                 </div>
 
                 <div 
-                    className="w-[50%] md:w-[30%] ml-[2%] md:ml-0 md:h-full h-[50%]  flex flex-col items-center space-y-2 md:pt-4 md:justify-center"
+                    className="w-[100%] md:w-[30%] ml-[2%] md:ml-0 md:h-full h-[50%]  flex flex-col items-center space-y-2 md:pt-4 md:justify-center mt-[6%]"
                 >
                     <div 
                         className="flex flex-col pr-3 pb-2"
@@ -54,7 +54,7 @@ const ProjectCard = (project_details:typeof receivedProjectDetails) => {
                             className="flex flex-row items-center space-x-2 mt-2"
                         >
                             <Link 
-                                href={project_details.project_github_link}
+                                href={project_details.project_link}
                             >
                                 <FaGithub 
                                     className="text-2xl" 
@@ -64,7 +64,7 @@ const ProjectCard = (project_details:typeof receivedProjectDetails) => {
                                 className="bg-white border rounded-md text-center"
                             >
                                 <Link 
-                                    href={project_details.project_link} className="text-black font-bold underline px-2"
+                                    href={project_details.project_github_link} className="text-black font-bold underline px-2"
                                 >
                                     Visit Project
                                 </Link>

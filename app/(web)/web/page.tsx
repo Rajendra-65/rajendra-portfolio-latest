@@ -26,7 +26,7 @@ const Web = () => {
         <div 
             className='items-center'
         >
-            <div className='w-[90%] h-auto border m-3 flex justify-evenly flex-wrap flex- p-2 rounded-sm space-y-2'>
+            <div className='w-[90%] h-auto border m-3 flex justify-evenly flex-wrap flex- p-2 rounded-sm space-y-2 gap-[6px]'>
                 <div className='flex justify-center flex-col items-center w-[96px] h-[108px] border space-y-2 mt-[2px]'>
                     <FaHtml5 className="bg-yellow-500 text-black w-[57px] h-[50px] rounded-sm"/>
                     <h1 className='font-medium'>HTML</h1>
