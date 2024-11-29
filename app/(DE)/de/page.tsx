@@ -110,6 +110,7 @@ const De = () => {
                     skillSet.map((skill, index) => (
                         <div 
                             className='flex justify-center flex-col items-center w-[100px] h-[125px] border space-y-3 mt-[2px] gap-[6px]'
+                            key={index}
                         >
                             <skill.icon 
                                 className={skill.className} 

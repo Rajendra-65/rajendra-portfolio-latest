@@ -3,14 +3,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaGithub } from 'react-icons/fa'
 
-const receivedProjectDetails = {
-    project_name:"string",
-    project_link:"string",
-    image_url:"string",
-    project_github_link:"string"
+type receivedProjectDetails = {
+    project_name:string,
+    project_link:string,
+    image_url:string,
+    project_github_link:string
 }
 
-const ProjectCard = (project_details:typeof receivedProjectDetails) => {
+const ProjectCard = (project_details:receivedProjectDetails) => {
     return (
         <div>
             <div 
