@@ -31,7 +31,7 @@ export default function Home() {
           <div className="flex justify-center place-items-center">
             <div>
               <Link
-                href={""}
+                href={"https://drive.google.com/drive/folders/10rtD7oIRlvtBreSAmXyro4WiuBZkSTMb?usp=sharing"}
                 target={"_blank"}
                 className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light"
               >

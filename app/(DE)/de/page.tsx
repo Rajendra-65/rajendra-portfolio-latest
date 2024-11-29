@@ -87,7 +87,7 @@ const skillSet = [
         skillName: "GCP",
         icon: SiGooglecloud,
         className: "text-white w-[57px] h-[50px] rounded-sm",
-        project_Link: "/gcp"
+        project_Link: ""
     },
     {
         skillName: "Azure",
@@ -104,7 +104,7 @@ const De = () => {
     return (
         <>
             <div 
-                className="w-[90%] h-auto border mb-3 p-2 flex justify-evenly flex-wrap"
+                className="w-[90%] h-auto border mb-3 p-2 flex justify-evenly flex-wrap space-y-2 space-x-2"
             >
                 {
                     skillSet.map((skill, index) => (

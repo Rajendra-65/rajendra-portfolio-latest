@@ -16,7 +16,7 @@ const project_details = [
     {
         project_name: "Ecommercery",
         project_link: "",
-        image_url: "/snapgram-image.png",
+        image_url: "/Ecommerce-web-code.png",
         project_github_link: ""
     }
 ]

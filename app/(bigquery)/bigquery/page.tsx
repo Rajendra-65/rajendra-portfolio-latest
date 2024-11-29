@@ -33,9 +33,14 @@ const bigquery_project = [
 
 const Page = () => {
     return (
-        <div className="flex flex-col gap-2 items-center">
+        <div 
+            className="flex flex-col gap-2 items-center"
+        >
             {bigquery_project.map((project, index) => (
-                <ProjectCard key={index} {...project} />
+                <ProjectCard 
+                    key={index} 
+                    {...project} 
+                />
             ))}
         </div>
     );

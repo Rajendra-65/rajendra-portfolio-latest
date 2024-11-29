@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const BottomBar = () => {
     return (
@@ -8,7 +9,12 @@ const BottomBar = () => {
                     <h1 className='text-xl'>2024 @copy alright reserved</h1>
                 </div>
                 <div className=''>
-                    <h1 className='text-xl'>Say Hello</h1>
+                    <Link 
+                        href="mailto:rajendrbehera9@gmail.com" 
+                        target={"_blank"}
+                    >
+                        <h1 className='text-xl'>Say Hello</h1>
+                    </Link>
                 </div>
             </div>
         </div>
