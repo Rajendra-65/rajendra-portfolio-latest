@@ -21,6 +21,7 @@ const Azure_Project = [
         project_github_link: "https://github.com/Rajendra-65/airline-adf-ci-cd"
     }
 ]
+
 const Azure = () => {
     return (
         <div
