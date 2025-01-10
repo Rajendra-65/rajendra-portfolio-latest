@@ -1,7 +1,6 @@
 'use client'
 import ProjectCard from "@/app/components/ProjectCard"
-import { useGSAP } from "@gsap/react"
-import React,{useRef} from "react"
+import React,{useRef,useLayoutEffect} from "react"
 import { AiOutlineKubernetes } from "react-icons/ai"
 import { DiMongodb, DiMysql } from "react-icons/di"
 import { FaCss3, FaDocker, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa"
@@ -26,17 +25,20 @@ const project_details = [
 
 const Web = () => {
 
-    const containerRef = useRef()
+    const containerRef = useRef<HTMLDivElement>(null)
 
-    useGSAP(()=>{
-        gsap.from(containerRef.current.children,{
-            x:50,
-            duration:0.8,
-            delay:1,
-            opacity:0,
-            stagger:0.3
-        })
-    })
+    useLayoutEffect(() => {
+        // Ensure the ref is not null before using it
+        if (containerRef.current) {
+            gsap.from(containerRef.current.children,{
+                x:50,
+                duration:0.8,
+                delay:1,
+                opacity:0,
+                stagger:0.3
+            })
+        }
+    }, []);
 
     return (
         <div 
@@ -82,8 +84,7 @@ const Web = () => {
                 <div className='flex justify-center flex-col items-center w-[96px] h-[108px] border space-y-2'>
                     <AiOutlineKubernetes className="text-white w-[57px] h-[50px] rounded-sm"/>
                     <h1 className='font-medium'>Kubernetes</h1>
-                </div>
-                
+                </div>                
             </div>
             <div
                 className="pb-5 flex flex-col items-center ml-[2%]"

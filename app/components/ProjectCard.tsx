@@ -3,7 +3,6 @@ import React, { useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaGithub } from 'react-icons/fa'
-import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
 type receivedProjectDetails = {
@@ -15,7 +14,7 @@ type receivedProjectDetails = {
 
 const ProjectCard = (project_details:receivedProjectDetails) => {
     
-    const imageContainerRef = useRef()
+    const imageContainerRef = useRef<HTMLDivElement>(null)
 
     const ScaleImage = () => {
         gsap.to(imageContainerRef.current, {

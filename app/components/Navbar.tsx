@@ -7,8 +7,8 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 
 const Navbar = () => {
-    const ulRef = useRef()
-    const ulRef1 = useRef()
+    const ulRef = useRef<HTMLUListElement>(null)
+    const ulRef1 = useRef<HTMLUListElement>(null)
     useGSAP(()=>{
         // @ts-expect-error it is in test
         gsap.from(ulRef.current.children,{

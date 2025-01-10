@@ -1,31 +1,36 @@
 'use client'
-import React,{useRef} from "react"
+import React,{useRef,useLayoutEffect} from "react"
 import Image from "next/image"
-import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
 const About = () => {
-    const paraRef1 = useRef()
-    const headingRef = useRef()
+    const headingRef = useRef<HTMLHeadingElement>(null)
     
-    useGSAP(()=>{
-        gsap.from(paraRef1.current.children,{
-            duration:0.8,
-            y:-50,
-            delay:1,
-            opacity:0,
-            stagger:0.3
-        })
-    })
+    const paraRef1 = useRef<HTMLParagraphElement>(null);
 
-    useGSAP(()=>{
-        gsap.from(headingRef.current,{
-            duration:0.8,
-            y:50,
-            delay:2,
-            opacity:0,
-        })
-    })
+    useLayoutEffect(() => {
+        // Ensure the ref is not null before using it
+        if (paraRef1.current) {
+            gsap.from(paraRef1.current.children, {
+                duration: 0.8,
+                y: -50,
+                delay: 1,
+                opacity: 0,
+                stagger: 0.3,
+            });
+        }
+    }, []);
+
+    useLayoutEffect(()=>{
+        if(headingRef.current){
+            gsap.from(headingRef.current.children,{
+                duration:0.8,
+                y:50,
+                delay:2,
+                opacity:0,
+            })
+        }
+    },[])
 
     return (
         <div className="flex py-5 flex-col">

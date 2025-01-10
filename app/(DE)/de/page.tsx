@@ -1,7 +1,6 @@
 "use client"
 import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
-import React,{useRef} from 'react'
+import React,{useRef,useLayoutEffect} from 'react'
 import ProjectCard from '@/app/components/ProjectCard'
 import { GrHadoop } from 'react-icons/gr'
 import { SiApacheairflow, SiApachehive, SiApachekafka, SiApachespark, SiDatabricks, SiGooglebigquery, SiGooglecloud, SiMicrosoftazure, SiMongodb, SiSnowflake } from 'react-icons/si'
@@ -108,17 +107,20 @@ const De = () => {
 
     const router = useRouter()
 
-    const containerRef = useRef()
+    const containerRef = useRef<HTMLDivElement>(null)
 
-    useGSAP(()=>{
-        gsap.from(containerRef.current.children,{
-            x:50,
-            duration:1,
-            delay:1,
-            opacity:0,
-            stagger:0.2
-        })
-    })
+    useLayoutEffect(() => {
+        // Ensure the ref is not null before using it
+        if (containerRef.current) {
+            gsap.from(containerRef.current.children,{
+                x:50,
+                duration:1,
+                delay:1,
+                opacity:0,
+                stagger:0.2
+            })
+        }
+    }, []);
 
     return (
         <>

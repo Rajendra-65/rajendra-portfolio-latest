@@ -5,10 +5,9 @@ import Link from 'next/link'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 const BottomBar = () => {
-    const headingRef1 = useRef()
-    const headingRef2 = useRef()
+    const headingRef1 = useRef<HTMLHeadingElement>(null)
+    const headingRef2 = useRef<HTMLHeadingElement>(null)
     useGSAP(()=>{
-        // @ts-expect-error it is in test
         gsap.from(headingRef1.current,{
             y:50,
             delay:1,
@@ -17,7 +16,6 @@ const BottomBar = () => {
         })
     })
     useGSAP(()=>{
-        // @ts-expect-error it is in test
         gsap.from(headingRef2.current,{
             y:-20,
             delay:2,

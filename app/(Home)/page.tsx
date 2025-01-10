@@ -1,6 +1,5 @@
 'use client'
-import { useRef,useEffect } from "react";
-import { useGSAP } from "@gsap/react";
+import { useRef,useLayoutEffect} from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,12 +9,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
 
-  const imageContainerRef = useRef(); // Ref for the container
-  const headingRef = useRef()
+  const imageContainerRef = useRef<HTMLDivElement>(null); // Ref for the container
+  const headingRef = useRef<HTMLHeadingElement>(null)
   
-  const RotateImage = (event) => {
-      const { offsetX, offsetY, target } = event.nativeEvent;
-      const { offsetWidth, offsetHeight } = target;
+  const RotateImage = (event:React.MouseEvent<HTMLImageElement>) => {
+      const { offsetX, offsetY} = event.nativeEvent;
+      const { offsetWidth, offsetHeight } = event.currentTarget;
 
       const tiltX = ((offsetY / offsetHeight) - 2) * 10; // Adjust the tilt intensity
       const tiltY = ((offsetX / offsetWidth) - 2) * 10;
@@ -39,17 +38,17 @@ export default function Home() {
       });
   };
 
-  useGSAP(()=>{
-    // @ts-expect-error it is in test
-    gsap.from(headingRef.current, {
-      y:50,
-      duration:1,
-      delay:1,
-      opacity:0
-    });
-})
-
-  
+  useLayoutEffect(() => {
+    // Ensure the ref is not null before using it
+    if (headingRef.current) {
+      gsap.from(headingRef.current, {
+        y:50,
+        duration:1,
+        delay:1,
+        opacity:0
+      });
+    }
+}, []);
 
   return (
     <div className="flex flex-col justify-center align-middle items-center  place-items-start md:flex-row md:justify-between">
