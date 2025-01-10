@@ -1,6 +1,7 @@
 "use client"
-
-import React from 'react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import React,{useRef} from 'react'
 import ProjectCard from '@/app/components/ProjectCard'
 import { GrHadoop } from 'react-icons/gr'
 import { SiApacheairflow, SiApachehive, SiApachekafka, SiApachespark, SiDatabricks, SiGooglebigquery, SiGooglecloud, SiMicrosoftazure, SiMongodb, SiSnowflake } from 'react-icons/si'
@@ -107,9 +108,22 @@ const De = () => {
 
     const router = useRouter()
 
+    const containerRef = useRef()
+
+    useGSAP(()=>{
+        gsap.from(containerRef.current.children,{
+            x:50,
+            duration:1,
+            delay:1,
+            opacity:0,
+            stagger:0.2
+        })
+    })
+
     return (
         <>
             <div 
+                ref={containerRef}
                 className="w-[90%] h-auto border mb-3 p-2 flex justify-evenly flex-wrap space-y-2 space-x-2"
             >
                 {

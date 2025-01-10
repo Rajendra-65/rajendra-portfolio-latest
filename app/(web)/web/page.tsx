@@ -1,10 +1,13 @@
+'use client'
 import ProjectCard from "@/app/components/ProjectCard"
-import React from "react"
+import { useGSAP } from "@gsap/react"
+import React,{useRef} from "react"
 import { AiOutlineKubernetes } from "react-icons/ai"
 import { DiMongodb, DiMysql } from "react-icons/di"
 import { FaCss3, FaDocker, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa"
 import { IoLogoJavascript } from "react-icons/io"
 import { RiNextjsFill } from "react-icons/ri"
+import gsap from "gsap"
 
 const project_details = [
     {
@@ -22,11 +25,24 @@ const project_details = [
 ]
 
 const Web = () => {
+
+    const containerRef = useRef()
+
+    useGSAP(()=>{
+        gsap.from(containerRef.current.children,{
+            x:50,
+            duration:0.8,
+            delay:1,
+            opacity:0,
+            stagger:0.3
+        })
+    })
+
     return (
         <div 
             className='items-center'
         >
-            <div className='w-[90%] h-auto border m-3 flex justify-evenly flex-wrap flex- p-2 rounded-sm space-y-2 gap-[6px]'>
+            <div ref={containerRef} className='w-[90%] h-auto border m-3 flex justify-evenly flex-wrap flex- p-2 rounded-sm space-y-2 gap-[6px]'>
                 <div className='flex justify-center flex-col items-center w-[96px] h-[108px] border space-y-2 mt-[2px]'>
                     <FaHtml5 className="bg-yellow-500 text-black w-[57px] h-[50px] rounded-sm"/>
                     <h1 className='font-medium'>HTML</h1>

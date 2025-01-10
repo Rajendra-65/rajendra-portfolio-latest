@@ -1,16 +1,51 @@
-import React from "react"
+'use client'
+import React,{useRef} from "react"
 import Image from "next/image"
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 
 const About = () => {
+    const paraRef1 = useRef()
+    const headingRef = useRef()
+    
+    useGSAP(()=>{
+        gsap.from(paraRef1.current.children,{
+            duration:0.8,
+            y:-50,
+            delay:1,
+            opacity:0,
+            stagger:0.3
+        })
+    })
+
+    useGSAP(()=>{
+        gsap.from(headingRef.current,{
+            duration:0.8,
+            y:50,
+            delay:2,
+            opacity:0,
+        })
+    })
+
     return (
         <div className="flex py-5 flex-col">
             <div className="pb-3 flex justify-center items-center">
-                <p className="text-3xl font-extrabold">Passion Fuels Purpose!</p>
+                <p ref={paraRef1} className="text-3xl font-extrabold gap-2 flex">
+                    <span>
+                        Passion
+                    </span> 
+                    <span>
+                        Fuels
+                    </span> 
+                    <span>
+                        Purpose!
+                    </span>
+                </p>
             </div>
             <div>
                 <div className="flex flex-col items-center justify-center md:flex-row md:justify-between">
-                    <div className='w-[77%] h-[55%] md:w-[45%] md:h-[40%] border mr-2 mb-2 flex flex-col space-y-2'>
-                        <h1 className="font-medium pb-2">ABOUT ME!</h1>
+                    <div className='w-[77%] h-[55%] md:w-[45%] md:h-[40%] border mr-2 mb-2 flex flex-col space-y-2 p-5'>
+                        <h1 ref={headingRef} className="font-medium pb-2 text-center alignc-center justify-center flex">ABOUT ME!</h1>
                         <p className="font-normal">
                             I thrive at the intersection of data, development, and automation. My ability to adapt and innovate has been honed through diverse experiences, including completing an internship at Softtech and certifications under the guidance of industry leaders like Shashank Mishra.
                         </p>

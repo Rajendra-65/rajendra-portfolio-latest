@@ -1,7 +1,10 @@
-import React from 'react'
+'use client'
+import React, { useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaGithub } from 'react-icons/fa'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 type receivedProjectDetails = {
     project_name:string,
@@ -11,12 +14,34 @@ type receivedProjectDetails = {
 }
 
 const ProjectCard = (project_details:receivedProjectDetails) => {
+    
+    const imageContainerRef = useRef()
+
+    const ScaleImage = () => {
+        gsap.to(imageContainerRef.current, {
+          scale: 1.1, // Increase scale slightly
+          duration: 0.3, // Animation duration
+          ease: "power3.out", // Smooth animation
+        });
+    };
+    
+    const ResetImage = () => {
+        gsap.to(imageContainerRef.current, {
+          scale: 1, // Reset to original size
+          duration: 0.3,
+          ease: "power3.inOut",
+        });
+    };
+
     return (
         <div>
             <div 
                 className="w-[92%] h-auto flex flex-col md:flex-row space-x-2 border border-b-4 border-r-4 border-r-white border-b-white p-3 rounded-md mb-2"
             >
                 <div 
+                    ref={imageContainerRef}
+                    onMouseEnter={ScaleImage}
+                    onMouseLeave={ResetImage}
                     className="w-[89%] md:w-[72%] h-full"
                 >
                     <Image
