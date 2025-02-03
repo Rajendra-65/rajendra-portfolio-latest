@@ -78,7 +78,7 @@ const ProjectCard = (project_details:receivedProjectDetails) => {
                             className="flex flex-row items-center space-x-2 mt-2"
                         >
                             <Link 
-                                href={project_details.project_link}
+                                href={project_details.project_github_link}
                             >
                                 <FaGithub 
                                     className="text-2xl" 
@@ -88,7 +88,7 @@ const ProjectCard = (project_details:receivedProjectDetails) => {
                                 className="bg-white border rounded-md text-center"
                             >
                                 <Link 
-                                    href={project_details.project_github_link} className="text-black font-bold underline px-2"
+                                    href={project_details.project_link} className="text-black font-bold underline px-2"
                                 >
                                     Visit Project
                                 </Link>
