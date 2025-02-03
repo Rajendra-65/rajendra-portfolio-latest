@@ -11,15 +11,15 @@ import gsap from "gsap"
 const project_details = [
     {
         project_name: "snapgram",
-        project_link: "",
+        project_link: "https://snapgram-beige-three.vercel.app/",
         image_url: "/snapgram-image.png",
-        project_github_link: ""
+        project_github_link: "https://github.com/Rajendra-65/socialMediaWebApp"
     },
     {
         project_name: "Ecommercery",
-        project_link: "",
+        project_link: "https://ecommerce-puce-psi-18.vercel.app/",
         image_url: "/Ecommerce-web-code.png",
-        project_github_link: ""
+        project_github_link: "https://github.com/Rajendra-65/Ecommerce"
     }
 ]
 
