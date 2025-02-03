@@ -17,7 +17,7 @@ const project_details = [
     },
     {
         project_name: "Ecommercery",
-        project_link: "https://ecommerce-puce-psi-18.vercel.app/",
+        project_link: "https://ecommerce-three-dun.vercel.app/",
         image_url: "/Ecommerce-web-code.png",
         project_github_link: "https://github.com/Rajendra-65/Ecommerce"
     }
