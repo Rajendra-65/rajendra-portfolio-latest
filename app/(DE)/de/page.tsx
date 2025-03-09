@@ -3,8 +3,9 @@ import gsap from 'gsap'
 import React,{useRef,useLayoutEffect} from 'react'
 import ProjectCard from '@/app/components/ProjectCard'
 import { GrHadoop } from 'react-icons/gr'
-import { SiApacheairflow, SiApachehive, SiApachekafka, SiApachespark, SiDatabricks, SiGooglebigquery, SiGooglecloud, SiMicrosoftazure, SiMongodb, SiSnowflake } from 'react-icons/si'
+import { SiApacheairflow, SiApachehive, SiApachekafka, SiApachespark, SiDatabricks, SiGooglebigquery, SiGooglecloud, SiMicrosoftazure, SiMongodb, SiPowerbi, SiSnowflake } from 'react-icons/si'
 import { DiMysql } from 'react-icons/di'
+import { PiMicrosoftExcelLogoDuotone } from "react-icons/pi"
 import { useRouter } from 'next/navigation'
 
 const Azure_Project = [
@@ -46,6 +47,12 @@ const skillSet = [
         icon: DiMysql,
         className: "text-white w-[57px] h-[50px] rounded-sm",
         project_Link: ""
+    },
+    {
+        skillName: "Excel",
+        icon: PiMicrosoftExcelLogoDuotone,
+        className: "text-cyan-500 w-[57px] h-[50px] rounded-sm",
+        project_Link: "/Excel"
     },
     {
         skillName: "Kafka",
@@ -100,6 +107,12 @@ const skillSet = [
         icon: SiMicrosoftazure,
         className: "text-cyan-500 w-[57px] h-[50px] rounded-sm",
         project_Link: "/azure"
+    },
+    {
+        skillName: "Power BI",
+        icon: SiPowerbi,
+        className: "text-cyan-500 w-[57px] h-[50px] rounded-sm",
+        project_Link: "/BI"
     }
 ]
 
