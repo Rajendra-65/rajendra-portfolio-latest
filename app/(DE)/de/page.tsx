@@ -3,10 +3,11 @@ import gsap from 'gsap'
 import React,{useRef,useLayoutEffect} from 'react'
 import ProjectCard from '@/app/components/ProjectCard'
 import { GrHadoop } from 'react-icons/gr'
-import { SiApacheairflow, SiApachehive, SiApachekafka, SiApachespark, SiDatabricks, SiGooglebigquery, SiGooglecloud, SiMicrosoftazure, SiMongodb, SiPowerbi, SiSnowflake } from 'react-icons/si'
+import { SiApacheairflow, SiApachehive, SiApachekafka, SiApachespark, SiDatabricks, SiGooglebigquery, SiGooglecloud, SiMicrosoftazure, SiMongodb, SiNumpy, SiPandas, SiPowerbi, SiSnowflake } from 'react-icons/si'
 import { DiMysql } from 'react-icons/di'
 import { PiMicrosoftExcelLogoDuotone } from "react-icons/pi"
 import { useRouter } from 'next/navigation'
+import { MdScatterPlot } from 'react-icons/md'
 
 const Azure_Project = [
     {
@@ -49,69 +50,87 @@ const skillSet = [
         project_Link: ""
     },
     {
+        skillName: "pandas",
+        icon: SiPandas,
+        className: "text-white w-[57px] h-[50px] rounded-sm mt-2  ",
+        project_Link: "/pandas"
+    },
+    {
+        skillName: "numpy",
+        icon: SiNumpy,
+        className: "text-white w-[57px] h-[50px] rounded-sm mt-2  ",
+        project_Link: "/numpy"
+    },
+    {
+        skillName: "matplotlib",
+        icon: MdScatterPlot,
+        className: "text-white w-[57px] h-[50px] rounded-sm mt-2  ",
+        project_Link: "/matplotlib"
+    },
+    {
         skillName: "Excel",
         icon: PiMicrosoftExcelLogoDuotone,
-        className: "text-cyan-500 w-[57px] h-[50px] rounded-sm",
+        className: "text-cyan-500 w-[57px] h-[50px] rounded-sm mt-2  ",
         project_Link: "/Excel"
     },
     {
         skillName: "Kafka",
         icon: SiApachekafka,
-        className: "text-cyan-500 w-[57px] h-[50px] rounded-sm",
+        className: "text-cyan-500 w-[57px] h-[50px] rounded-sm mt-2  ",
         project_Link: "/kafka"
     },
     {
         skillName:"MongoDb",
         icon:SiMongodb,
-        className: "text-white w-[57px] h-[50px] rounded-sm",
+        className: "text-white w-[57px] h-[50px] rounded-sm mt-2  ",
         project_Link: "/mongo"
     },
     {
         skillName: "Spark",
         icon: SiApachespark,
-        className: "text-white w-[57px] h-[50px] rounded-sm",
+        className: "text-white w-[57px] h-[50px] rounded-sm mt-2  ",
         project_Link: "/spark"
     },
     {
         skillName: "Databricks",
-        icon: SiDatabricks,
-        className: "text-red-500 w-[57px] h-[50px] rounded-sm",
+        icon: SiDatabricks, 
+        className: "text-red-500 w-[57px] h-[50px] rounded-sm mt-2  ",
         project_Link: "/databricks"
     },
     {
         skillName: "Airflow",
         icon: SiApacheairflow,
-        className: "text-white w-[57px] h-[50px] rounded-sm",
+        className: "text-white w-[57px] h-[50px] rounded-sm mt-2  ",
         project_Link: "/airflow"
     },
     {
         skillName: "Snowflake",
         icon: SiSnowflake,
-        className: "bg-cyan-300 text-white w-[57px] h-[50px] rounded-sm",
+        className: "bg-cyan-300 text-white w-[57px] h-[50px] rounded-sm mt-2  ",
         project_Link: "/snowflake"
     },
     {
         skillName: "BigQuery",
         icon: SiGooglebigquery,
-        className: "text-white w-[57px] h-[50px] rounded-sm",
+        className: "text-white w-[57px] h-[50px] rounded-sm mt-2  ",
         project_Link: "/bigquery"
     },
     {
         skillName: "GCP",
-        icon: SiGooglecloud,
-        className: "text-white w-[57px] h-[50px] rounded-sm",
+        icon: SiGooglecloud, 
+        className: "text-white w-[57px] h-[50px] rounded-sm mt-2  ",
         project_Link: ""
     },
     {
         skillName: "Azure",
         icon: SiMicrosoftazure,
-        className: "text-cyan-500 w-[57px] h-[50px] rounded-sm",
+        className: "text-cyan-500 w-[57px] h-[50px] rounded-sm mt-2  ",
         project_Link: "/azure"
     },
     {
         skillName: "Power BI",
         icon: SiPowerbi,
-        className: "text-cyan-500 w-[57px] h-[50px] rounded-sm",
+        className: "text-cyan-500 w-[57px] h-[50px] rounded-sm mt-2  ",
         project_Link: "/BI"
     }
 ]
@@ -139,12 +158,12 @@ const De = () => {
         <>
             <div 
                 ref={containerRef}
-                className="w-[90%] h-auto border mb-3 p-2 flex justify-evenly flex-wrap space-y-2 space-x-2"
+                className="w-[90%] h-auto border mb-3 p-4 flex justify-evenly flex-wrap space-y-2 space-x-2"
             >
                 {
                     skillSet.map((skill, index) => (
                         <div 
-                            className='flex justify-center flex-col items-center w-[100px] h-[125px] border space-y-3 mt-[2px] gap-[6px]'
+                            className='flex justify-center flex-col items-center w-[100px] h-[125px] border space-y-3 mt-[2px] gap-[6px] pb-[5px]'
                             key={index}
                         >
                             <skill.icon 
@@ -160,7 +179,7 @@ const De = () => {
                                 skill.project_Link.length > 0 ? (
                                     <h1 
                                         onClick={() => { router.push(skill.project_Link) }} 
-                                        className='font-medium underline text-green-500 cursor-pointer'
+                                        className='font-medium underline text-green-500 cursor-pointer mb-[5px]'
                                     >
                                         visit-project
                                     </h1>
@@ -184,6 +203,7 @@ const De = () => {
             </div>
         </>
     )
+    
 }
 
 export default De
