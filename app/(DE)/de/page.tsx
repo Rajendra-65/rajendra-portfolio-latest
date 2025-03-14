@@ -47,7 +47,7 @@ const skillSet = [
         skillName: "sql",
         icon: DiMysql,
         className: "text-white w-[57px] h-[50px] rounded-sm",
-        project_Link: ""
+        project_Link: "/sql"
     },
     {
         skillName: "pandas",
